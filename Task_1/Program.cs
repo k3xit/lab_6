@@ -20,13 +20,15 @@ class Program
         copyCar.power = 385;
         Console.WriteLine(copyCar);
         Console.WriteLine(copyCar.GetFullInfo());
-        Console.WriteLine($"Первый и последний символ: {copyCar.GetFirstAndLastChar()}");
+        Console.WriteLine(
+            $"Первый и последний символ: {copyCar.GetFirstAndLastChar()}");
 
         Console.WriteLine("\nРучной ввод с проверкой:");
         var inputCar = Car.ReadFromConsole();
         Console.WriteLine("\nСозданный автомобиль:");
         Console.WriteLine(inputCar);
         Console.WriteLine(inputCar.GetFullInfo());
-        Console.WriteLine($"Первый и последний символ: {inputCar.GetFirstAndLastChar()}");
+        Console.WriteLine(
+            $"Первый и последний символ: {inputCar.GetFirstAndLastChar()}");
     }
 }

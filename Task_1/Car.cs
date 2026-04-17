@@ -37,24 +37,28 @@ internal class Car : CarBrand
         string brand;
         do
         {
-        Console.Write("Введите бренд: ");
-        brand = Console.ReadLine() ?? string.Empty;
-    } while (string.IsNullOrWhiteSpace(brand));
+            Console.Write("Введите бренд: ");
+            brand = Console.ReadLine() ?? string.Empty;
+        } while (string.IsNullOrWhiteSpace(brand));
 
-    string model;
-    do
-    {
-        Console.Write("Введите модель: ");
-        model = Console.ReadLine() ?? string.Empty;
-    } while (string.IsNullOrWhiteSpace(model));
+        string model;
+        do
+        {
+            Console.Write("Введите модель: ");
+            model = Console.ReadLine() ?? string.Empty;
+        } while (string.IsNullOrWhiteSpace(model));
 
         int year;
         bool validYear;
         do
         {
             Console.Write("Введите год выпуска (1900-2026): ");
-            validYear = int.TryParse(Console.ReadLine(), out year) && year >= 1900 && year <= 2026;
-            if (!validYear) Console.WriteLine("Ошибка: введите корректный год.");
+            validYear = int.TryParse(Console.ReadLine(), out year)
+                        && year >= 1900 && year <= 2026;
+            if (!validYear)
+            {
+                Console.WriteLine("Ошибка: введите корректный год.");
+            }
         } while (!validYear);
 
         int power;
@@ -62,8 +66,13 @@ internal class Car : CarBrand
         do
         {
             Console.Write("Введите мощность в л.с. (50-1000): ");
-            validPower = int.TryParse(Console.ReadLine(), out power) && power >= 50 && power <= 1000;
-            if (!validPower) Console.WriteLine("Ошибка: мощность должна быть от 50 до 1000 л.с.");
+            validPower = int.TryParse(Console.ReadLine(), out power)
+                        && power >= 50 && power <= 1000;
+            if (!validPower)
+            {
+                Console.WriteLine(
+                    "Ошибка: мощность должна быть от 50 до 1000 л.с.");
+            }
         } while (!validPower);
 
         return new Car(brand, model, year, power);
@@ -77,11 +86,13 @@ internal class Car : CarBrand
     public string GetFullInfo()
     {
         string taxStatus = IsHighTax() ? "повышенный" : "стандартный";
-        return $"{BrandName} {model} ({year}), мощность: {power} л.с., налог: {taxStatus}";
+        return $"{BrandName} {model} ({year}), мощность: {power} л.с., "
+            + $"налог: {taxStatus}";
     }
 
     public override string ToString()
     {
-        return base.ToString() + $", Модель: {model}, Год: {year}, Мощность: {power} л.с.";
+        return base.ToString()
+            + $", Модель: {model}, Год: {year}, Мощность: {power} л.с.";
     }
 }

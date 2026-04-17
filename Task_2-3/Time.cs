@@ -80,13 +80,15 @@ internal class Time
         {
             Console.Write("Введите часы (0-23): ");
             input = Console.ReadLine() ?? string.Empty;
-        } while (!byte.TryParse(input, out inputHours) || inputHours >= 24);
+        } while (!byte.TryParse(input, out inputHours)
+             || inputHours >= 24);
 
         do
         {
             Console.Write("Введите минуты (0-59): ");
             input = Console.ReadLine() ?? string.Empty;
-        } while (!byte.TryParse(input, out inputMinutes) || inputMinutes >= 60);
+        } while (!byte.TryParse(input, out inputMinutes) 
+            || inputMinutes >= 60);
 
         return new Time(inputHours, inputMinutes);
     }

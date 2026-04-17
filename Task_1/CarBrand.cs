@@ -22,7 +22,10 @@ internal class CarBrand
 
     public string BrandName
     {
-        get => brandName;
+        get 
+        {
+            return brandName;
+        }
         set
         {
             if (!string.IsNullOrWhiteSpace(value))
@@ -32,8 +35,10 @@ internal class CarBrand
 
     public string GetFirstAndLastChar()
     {
-        if (string.IsNullOrEmpty(brandName)) return "N/A";
-        if (brandName.Length == 1) return $"{brandName[0]}{brandName[0]}";
+        if (string.IsNullOrEmpty(brandName))
+             return "N/A";
+        if (brandName.Length == 1)
+             return $"{brandName[0]}{brandName[0]}";
         return $"{brandName[0]}{brandName[^1]}";
     }
 
