@@ -60,6 +60,7 @@ class Program
         userInput++;
         Console.WriteLine("После ++: " + userInput.ToString());
         Console.WriteLine("Часы: " + ((byte)userInput).ToString()
-             + ", Не нули??: " + ((bool)userInput).ToString());
+             + ", Не нули??: ");
+        Console.WriteLine(userInput);
     }
 }

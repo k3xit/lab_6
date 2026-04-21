@@ -1,8 +1,8 @@
 ﻿using System;
 
-class Program
+internal class Program
 {
-    static void Main()
+    private static void Main()
     {
         Console.WriteLine("\nБазовые параметры:");
         var defaultCar = new Car();
@@ -16,19 +16,11 @@ class Program
 
         Console.WriteLine("\nКопирование:");
         var copyCar = new Car(customCar);
-        copyCar.model = "M340i";
-        copyCar.power = 385;
+        copyCar.Model = "M340i";
+        copyCar.Power = 385;
         Console.WriteLine(copyCar);
         Console.WriteLine(copyCar.GetFullInfo());
         Console.WriteLine(
             $"Первый и последний символ: {copyCar.GetFirstAndLastChar()}");
-
-        Console.WriteLine("\nРучной ввод с проверкой:");
-        var inputCar = Car.ReadFromConsole();
-        Console.WriteLine("\nСозданный автомобиль:");
-        Console.WriteLine(inputCar);
-        Console.WriteLine(inputCar.GetFullInfo());
-        Console.WriteLine(
-            $"Первый и последний символ: {inputCar.GetFirstAndLastChar()}");
     }
 }

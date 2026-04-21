@@ -1,49 +1,63 @@
+using System;
+
 internal class CarBrand
 {
-    private string brandName;
+    private string _brandName = string.Empty;
 
     public CarBrand()
     {
-        brandName = "Toyota";
+        _brandName = "Toyota";
     }
 
     public CarBrand(string name)
     {
-        brandName = name;
+        BrandName = name;
     }
 
-   public CarBrand(CarBrand other)
+    public CarBrand(CarBrand other)
     {
         if (other != null)
-            this.brandName = other.brandName;
+        {
+            _brandName = other.BrandName;
+        }
         else
-            this.brandName = "Toyota";
+        {
+            _brandName = "Toyota";
+        }
     }
 
     public string BrandName
     {
-        get 
+        get
         {
-            return brandName;
+            return _brandName;
         }
         set
         {
             if (!string.IsNullOrWhiteSpace(value))
-                brandName = value.Trim();
+            {
+                _brandName = value.Trim();
+            }
         }
     }
 
     public string GetFirstAndLastChar()
     {
-        if (string.IsNullOrEmpty(brandName))
-             return "N/A";
-        if (brandName.Length == 1)
-             return $"{brandName[0]}{brandName[0]}";
-        return $"{brandName[0]}{brandName[^1]}";
+        if (string.IsNullOrEmpty(_brandName))
+        {
+            return "N/A";
+        }
+
+        if (_brandName.Length == 1)
+        {
+            return $"{_brandName[0]}{_brandName[0]}";
+        }
+
+        return $"{_brandName[0]}{_brandName[^1]}";
     }
 
     public override string ToString()
     {
-        return $"Бренд: {brandName}";
+        return $"Бренд: {_brandName}";
     }
 }
