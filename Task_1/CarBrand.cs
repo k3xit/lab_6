@@ -2,7 +2,7 @@ using System;
 
 internal class CarBrand
 {
-    private string _brandName = string.Empty;
+    private string? _brandName;
 
     public CarBrand()
     {

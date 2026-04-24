@@ -34,13 +34,22 @@ internal class Time
 
     public byte Hours
     {
-        get { return _hours; }
-        set { _hours = (value < 24) ? value : (byte)(value % 24); }
+        get 
+        { 
+            return _hours; 
+        }
+        set 
+        { 
+            _hours = (value < 24) ? value : (byte)(value % 24); 
+        }
     }
 
     public byte Minutes
     {
-        get { return _minutes; }
+        get 
+        { 
+            return _minutes; 
+        }
         set
         {
             if (value < 60)

@@ -8,20 +8,38 @@ internal class Car : CarBrand
 
     public string Model
     {
-        get { return _model; }
-        set { _model = value; }
+        get 
+        { 
+            return _model; 
+        }
+        set 
+        { 
+            _model = value; 
+        }
     }
 
     public int Year
     {
-        get { return _year; }
-        set { _year = value; }
+        get 
+        { 
+            return _year; 
+        }
+        set 
+        {
+            _year = value; 
+        }
     }
 
     public int Power
     {
-        get { return _power; }
-        set { _power = value; }
+        get 
+        { 
+            return _power; 
+        }
+        set 
+        { 
+            _power = value; 
+        }
     }
 
     public Car()
