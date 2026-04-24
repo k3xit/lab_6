@@ -21,6 +21,14 @@ internal class Program
         Console.WriteLine(copyCar);
         Console.WriteLine(copyCar.GetFullInfo());
         Console.WriteLine(
-            $"Первый и последний символ: {copyCar.GetFirstAndLastChar()}");
+            $"Первый и последний символ: {copyCar.GetFirstLastChar()}");
+
+        Console.WriteLine("\nРучной ввод с проверкой:");
+        var inputCar = Car.ReadFromConsole();
+        Console.WriteLine("\nСозданный автомобиль:");
+        Console.WriteLine(inputCar);
+        Console.WriteLine(inputCar.GetFullInfo());
+        Console.WriteLine(
+            $"Первый и последний символ: {inputCar.GetFirstLastChar()}");
     }
 }

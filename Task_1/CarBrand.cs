@@ -9,9 +9,9 @@ internal class CarBrand
         _brandName = "Toyota";
     }
 
-    public CarBrand(string name)
+    public CarBrand(string _brandName) 
     {
-        BrandName = name;
+        BrandName = _brandName;
     }
 
     public CarBrand(CarBrand other)
@@ -26,7 +26,7 @@ internal class CarBrand
         }
     }
 
-    public string BrandName
+    public string? BrandName
     {
         get
         {
@@ -41,7 +41,7 @@ internal class CarBrand
         }
     }
 
-    public string GetFirstAndLastChar()
+    public string GetFirstLastChar()
     {
         if (string.IsNullOrEmpty(_brandName))
         {
